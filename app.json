@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "pokemon-game-client",
+    "slug": "pokemon-game-client",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/whosThatPokemon_ic.png",
+    "splash": {
+      "image": "./assets/whosThatPokemon_splash.png",
+      "resizeMode": "contain"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
+    }
+  }
+}
