@@ -17,11 +17,10 @@ const styles = StyleSheet.create({
 
 const Login = () => {
   const [username, setUsername] = useState();
+  const [, setToken] = useContext(TokenContext);
 
   const navigation = useNavigation();
   const isFocused = useIsFocused();
-
-  const [, setToken] = useContext(TokenContext);
 
   // Reset the input when returning
   // to the login screen
@@ -32,8 +31,8 @@ const Login = () => {
   }, [isFocused]);
 
   const handleLogin = () => {
-    setToken(username);
-    navigation.navigate('Home', { username });
+    setToken({ username, token: null });
+    navigation.navigate('Home');
   }
 
   return (
