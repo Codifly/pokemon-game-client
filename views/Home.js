@@ -4,7 +4,7 @@ import { StyleSheet, View, Image } from 'react-native';
 import { Button, Title, Caption } from 'react-native-paper';
 
 import pokemonIdToImageMap from '../utils/pokemonIdToImageMap';
-import { TokenContext } from '../global/TokenProvider';
+import { AuthContext } from '../global/AuthProvider';
 
 const styles = StyleSheet.create({
   container: {
@@ -24,7 +24,7 @@ function useGoTo(screen) {
 }
 
 const Home = () => {
-  const [{ username }] = useContext(TokenContext);
+  const [{ username }] = useContext(AuthContext);
 
   const goToGame = useGoTo('Game');
   const goToLeaderBoard = useGoTo('LeaderBoard');
@@ -40,7 +40,7 @@ const Home = () => {
       </View>
       <Button
         dark
-        style={{ borderColor: '#355FA0', marginBottom: 10 }}
+        style={{ marginBottom: 10 }}
         mode="contained"
         color="#F9C934"
         labelStyle={{ color: '#355FA0', fontWeight: 'bold' }}
@@ -50,7 +50,6 @@ const Home = () => {
       </Button>
       <Button
         dark
-        style={{ borderColor: '#355FA0' }}
         mode="contained"
         color="#F9C934"
         labelStyle={{ color: '#355FA0', fontWeight: 'bold' }}
