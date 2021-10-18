@@ -1,5 +1,5 @@
 import React, { useContext } from 'react';
-import { useNavigation, useRoute } from '@react-navigation/core';
+import { useNavigation } from '@react-navigation/core';
 import { StyleSheet, View, Image } from 'react-native';
 import { Button, Title, Caption } from 'react-native-paper';
 
