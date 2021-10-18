@@ -24,6 +24,8 @@ function useGoTo(screen) {
 }
 
 const Home = () => {
+  const navigation = useNavigation();
+
   const [{ username }] = useContext(AuthContext);
 
   const goToGame = useGoTo('Game');
