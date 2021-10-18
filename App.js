@@ -1,21 +1,43 @@
-import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { ScrollView, StyleSheet } from 'react-native';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { StatusBar } from 'expo-status-bar';
+
+import TokenProvider from './global/TokenProvider';
+import Login from './views/Login';
+import Home from './views/Home';
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
-    backgroundColor: '#fff',
     alignItems: 'center',
     justifyContent: 'center',
+    width: '100%',
+    height: '100%',
+    backgroundColor: '#FFFF'
   },
 });
 
+const Stack = createNativeStackNavigator();
+
 export default function App() {
   return (
-    <View style={styles.container}>
+    <>
       <StatusBar style="auto" />
-      <Text>Open up App.js to start working on your app!</Text>
-    </View>
+        <ScrollView
+          scrollEnabled={false}
+          keyboardShouldPersistTaps="handled"
+          contentContainerStyle={{ width: '100%', height: '100%' }}
+        >
+          <TokenProvider>
+            <NavigationContainer>
+              <Stack.Navigator screenOptions={{ contentStyle: styles.container }}>
+                <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
+                <Stack.Screen name="Home" component={Home} />
+              </Stack.Navigator>
+            </NavigationContainer>
+          </TokenProvider>
+        </ScrollView>
+    </>
   );
 }
