@@ -9,6 +9,7 @@
   },
   "dependencies": {
     "@react-navigation/native": "^6.0.6",
+    "@react-navigation/native-stack": "^6.2.5",
     "expo": "~42.0.1",
     "expo-status-bar": "~1.0.4",
     "react": "16.13.1",
@@ -23,7 +24,8 @@
   "devDependencies": {
     "@babel/core": "^7.9.0",
     "@babel/plugin-proposal-nullish-coalescing-operator": "^7.14.5",
-    "@babel/plugin-proposal-optional-chaining": "^7.14.5"
+    "@babel/plugin-proposal-optional-chaining": "^7.14.5",
+    "jimp": "^0.16.1"
   },
   "private": true
 }
