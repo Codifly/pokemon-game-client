@@ -19,13 +19,32 @@ const post = async (url, body = {}, options = {}) => {
   return data;
 }
 
+const get = async (url, options = {}) => {
+  const response = await fetch(`${URI}${url}`, {
+    method: 'GET',
+    ...options,
+    headers: {
+      ...defaultHeaders,
+      ...options.headers,
+    },
+  });
+  const data = await response.json();
+  return data;
+}
+
 const login = async (variables) => {
   const data = await post('/login', variables);
   return data;
 }
 
+const getLeaderboard = async () => {
+  const data = await get('/leaderboard');
+  return data;
+}
+
 const API = {
   login,
+  getLeaderboard,
 }
 
 export default API;
