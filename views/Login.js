@@ -8,7 +8,7 @@ import { AuthContext } from '../global/AuthProvider';
 import API from '../global/API';
 import useApiRequest from '../utils/useApiRequest';
 import PokemonButton from '../components/PokemonButton';
-import useGoTo from '../utils/useGoTo';
+// import useGoTo from '../utils/useGoTo';
 
 const styles = StyleSheet.create({
   container: {
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
 });
 
 const Login = () => {
-  const goToHome = useGoTo('Home');
+  // const goToHome = useGoTo('Home');
   const [auth, setAuth] = useContext(AuthContext);
   const [login, { loading, data, error }] = useApiRequest(API.login);
 
@@ -45,13 +45,13 @@ const Login = () => {
       setPassword('');
       setAuth({ token: data.token, username: username });
     }
-  }, [data, goToHome, setAuth, setUsername, setPassword]);
+  }, [data, setAuth, setUsername, setPassword]);
 
-  useEffect(() => {
-    if (auth?.token) {
-      goToHome();
-    }
-  }, [auth, goToHome]);
+  // useEffect(() => {
+  //   if (auth?.token) {
+  //     goToHome();
+  //   }
+  // }, [auth, goToHome]);
 
   return (
     <View style={styles.container}>
