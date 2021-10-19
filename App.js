@@ -4,7 +4,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StatusBar } from 'expo-status-bar';
 
-import TokenProvider from './global/TokenProvider';
+import AuthProvider from './global/AuthProvider';
 import Login from './views/Login';
 import Home from './views/Home';
 import Game from './views/Game';
@@ -31,7 +31,7 @@ export default function App() {
           keyboardShouldPersistTaps="handled"
           contentContainerStyle={{ width: '100%', height: '100%' }}
         >
-          <TokenProvider>
+          <AuthProvider>
             <NavigationContainer>
               <Stack.Navigator screenOptions={{ contentStyle: styles.container }}>
                 <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
@@ -40,7 +40,7 @@ export default function App() {
                 <Stack.Screen name="Result" component={Result} />
               </Stack.Navigator>
             </NavigationContainer>
-          </TokenProvider>
+          </AuthProvider>
         </ScrollView>
     </>
   );
