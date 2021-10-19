@@ -8,10 +8,6 @@ import AuthProvider from './global/AuthProvider';
 import Login from './views/Login';
 import Home from './views/Home';
 import Game from './views/Game';
-import Result from './views/Result';
-import Leaderboard from './views/Leaderboard';
-
-console.disableYellowBox = true;
 
 const styles = StyleSheet.create({
   container: {
@@ -42,7 +38,6 @@ export default function App() {
               <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
               <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
               <Stack.Screen name="Game" component={Game} />
-              <Stack.Screen name="Result" component={Result} options={{ headerShown: false }} />
             </Stack.Navigator>
           </NavigationContainer>
       </KeyboardAvoidingView>
