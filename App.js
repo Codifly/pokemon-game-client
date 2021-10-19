@@ -8,8 +8,6 @@ import AuthProvider from './global/AuthProvider';
 import Login from './views/Login';
 import Home from './views/Home';
 import Game from './views/Game';
-import Result from './views/Result';
-import Leaderboard from './views/Leaderboard';
 
 console.disableYellowBox = true;
 

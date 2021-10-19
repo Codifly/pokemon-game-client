@@ -36,7 +36,6 @@ const styles = StyleSheet.create({
 
 const Home = () => {
   const goToGame = useGoTo('Game');
-  const goToLeaderBoard = useGoTo('Leaderboard');
   const [{ username }] = useContext(AuthContext);
 
   const [pokemonId] = useState(generateRandomPokemonId());
@@ -55,7 +54,7 @@ const Home = () => {
       <PokemonButton onPress={goToGame} style={styles.playButton}>
         Play!
       </PokemonButton>
-      <PokemonButton onPress={goToLeaderBoard}>
+      <PokemonButton>
         Leader board
       </PokemonButton>
     </View>
