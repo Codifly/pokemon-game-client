@@ -6,7 +6,6 @@ import { Title, Caption } from 'react-native-paper';
 import pokemonIdToImageMap from '../utils/pokemonIdToImageMap';
 import { AuthContext } from '../global/AuthProvider';
 import PokemonButton from '../components/PokemonButton';
-import useGoTo from '../utils/useGoTo';
 import generateRandomPokemonId from '../utils/generateRandomPokemonId';
 
 const styles = StyleSheet.create({
@@ -35,8 +34,6 @@ const styles = StyleSheet.create({
 });
 
 const Home = () => {
-  const goToGame = useGoTo('Game');
-  const goToLeaderBoard = useGoTo('Leaderboard');
   const [{ username }] = useContext(AuthContext);
 
   const [pokemonId] = useState(generateRandomPokemonId());
@@ -52,10 +49,10 @@ const Home = () => {
           Can you name all the pokémons?
           </Caption>
       </View>
-      <PokemonButton onPress={goToGame} style={styles.playButton}>
+      <PokemonButton style={styles.playButton}>
         Play!
       </PokemonButton>
-      <PokemonButton onPress={goToLeaderBoard}>
+      <PokemonButton>
         Leader board
       </PokemonButton>
     </View>
