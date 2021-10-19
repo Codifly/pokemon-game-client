@@ -42,7 +42,6 @@ export default function App() {
               <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
               <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
               <Stack.Screen name="Game" component={Game} />
-              <Stack.Screen name="Result" component={Result} options={{ headerShown: false }} />
             </Stack.Navigator>
           </NavigationContainer>
       </KeyboardAvoidingView>
