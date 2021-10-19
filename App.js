@@ -41,7 +41,6 @@ export default function App() {
             <Stack.Navigator screenOptions={{ contentStyle: styles.container }}>
               <Stack.Screen name="Login" component={Login} options={{ headerShown: false }} />
               <Stack.Screen name="Home" component={Home} options={{ headerShown: false }} />
-              <Stack.Screen name="Game" component={Game} />
             </Stack.Navigator>
           </NavigationContainer>
       </KeyboardAvoidingView>
