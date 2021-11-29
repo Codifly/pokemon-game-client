@@ -32,8 +32,8 @@ const Login = () => {
   const [auth, setAuth] = useContext(AuthContext);
   const [login, { loading, data, error }] = useApiRequest(API.login);
 
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('jef');
+  const [password, setPassword] = useState('kombijmij');
 
   const handleLogin = useCallback(() => {
     login({ username, password });
